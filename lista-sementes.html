@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encomendar Sementes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/lista-sementes.css">
+</head>
+<body>
+
+    <header>
+        <a href="tela-principal-1.html" class="back-link">
+            <div class="back-button">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+        </a>
+        <h1>Encomendar sementes</h1>
+    </header>
+
+    <div class="user-bar">
+        <div class="user-info">
+            <div class="user-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <span class="user-name">Gustavo Koichi</span>
+        </div>
+        <div class="credits-badge">
+            <i class="fa-solid fa-coins"></i>
+            CRÉDITOS: 5
+        </div>
+    </div>
+
+    <main>
+        <div class="product-card">
+            <img src="images/rectangle-18-308.png" alt="Feijão" class="product-image">
+            <div class="product-details">
+                <h2 class="product-title">Semente de feijão</h2>
+                <p class="product-desc">Descrição sobre a semente, o produto que ela dá, em que tipo de solo e clima ela melhor se adapta</p>
+                <div class="action-row">
+                    <div class="price-tag">
+                        <i class="fa-solid fa-coins"></i> 1
+                    </div>
+                    <div class="weight-info">
+                        Saca com<br>10kgs
+                    </div>
+                    <div class="counter">
+                        <button class="counter-btn" onclick="updateCounter(this, -1)">-</button>
+                        <span class="counter-value">4</span>
+                        <button class="counter-btn" onclick="updateCounter(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/rectangle-31-309.png" alt="Milho" class="product-image">
+            <div class="product-details">
+                <h2 class="product-title">Semente de milho</h2>
+                <p class="product-desc">Descrição sobre a semente, o produto que ela dá, em que tipo de solo e clima ela melhor se adapta</p>
+                <div class="action-row">
+                    <div class="price-tag">
+                        <i class="fa-solid fa-coins"></i> 1
+                    </div>
+                    <div class="weight-info">
+                        Saca com<br>10kgs
+                    </div>
+                    <div class="counter">
+                        <button class="counter-btn" onclick="updateCounter(this, -1)">-</button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn" onclick="updateCounter(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/rectangle-34-310.png" alt="Mandioca" class="product-image">
+            <div class="product-details">
+                <h2 class="product-title">Semente de mandioca</h2>
+                <p class="product-desc">Descrição sobre a semente, o produto que ela dá, em que tipo de solo e clima ela melhor se adapta</p>
+                <div class="action-row">
+                    <div class="price-tag">
+                        <i class="fa-solid fa-coins"></i> 1
+                    </div>
+                    <div class="weight-info">
+                        Saca com<br>10kgs
+                    </div>
+                    <div class="counter">
+                        <button class="counter-btn" onclick="updateCounter(this, -1)">-</button>
+                        <span class="counter-value">1</span>
+                        <button class="counter-btn" onclick="updateCounter(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="conferir-compra.html">
+          <button class="btn-finalize">FINALIZAR</button>
+        </a>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item">
+            <i class="fa-regular fa-id-card"></i>
+            Meus dados
+        </a>
+        <a href="#" class="nav-item active">
+            <i class="fa-solid fa-basket-shopping"></i>
+            Carrinho
+        </a>
+        <a href="sobre-o-projeto.html" class="nav-item">
+            <i class="fa-brands fa-envira"></i>
+            O projeto
+        </a>
+        <a href="fale-conosco.html" class="nav-item">
+            <i class="fa-regular fa-envelope"></i>
+            Contato
+        </a>
+    </nav>
+
+    <script>
+        function updateCounter(button, delta) {
+            const counterElement = button.parentElement.querySelector('.counter-value');
+            let currentValue = parseInt(counterElement.textContent);
+            let newValue = currentValue + delta;
+
+            if (newValue >= 0) {
+                counterElement.textContent = newValue;
+            }
+        }
+    </script>
+</body>
+</html>

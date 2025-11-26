@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #E8DCC8;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.cadastro-3-73 {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+.logo {
+    width: 140px;
+    height: auto;
+    margin: 10px auto 20px;
+    display: block;
+}
+
+.titulo-secao {
+    font-size: 24px;
+    font-weight: 700;
+    color: #624330;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.texto-info {
+    font-size: 14px;
+    color: #624330;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.input-field {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: #C9B698;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #624330;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.input-field::placeholder {
+    color: #624330;
+    opacity: 0.8;
+}
+
+.row-inputs {
+    display: flex;
+    gap: 12px;
+}
+
+.input-agencia {
+    flex: 0 0 30%;
+}
+
+.input-conta {
+    flex: 1;
+}
+
+.upload-box {
+    display: flex;
+    align-items: center;
+    background-color: #9B8B6B;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.upload-box:active {
+    background-color: #8A7A5A;
+}
+
+.upload-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #9B8B6B;
+    border-right: 2px solid #7A6A4A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.upload-text {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.prototype-link {
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.btn-continuar {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    background-color: #E07B4F;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-continuar:active {
+    background-color: #D06A3E;
+}

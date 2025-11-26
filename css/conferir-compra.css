@@ -1,0 +1,342 @@
+/* --- ESTILOS GLOBAIS E ESTRUTURA DE APP --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #EEE8D5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    body {
+        max-width: 480px;
+        margin: 0 auto;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+    }
+    nav.bottom-nav {
+        max-width: 480px;
+    }
+}
+
+/* --- HEADER (CABEÇALHO) --- */
+header {
+    background-color: #E8834F;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.back-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-button i {
+    color: white;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* --- BARRA DE USUÁRIO E CRÉDITOS --- */
+.user-bar {
+    background-color: #DCCFB8;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #4A3B32;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E8834F;
+    font-size: 20px;
+    border: 1px solid #C67040;
+}
+
+.user-name {
+    color: #4A3B32;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.credits-badge {
+    background-color: #A69C85;
+    border: 1px solid #968C76;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+main {
+    flex: 1;
+    padding: 20px;
+    padding-bottom: 90px;
+}
+
+.product-card {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 20px;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Estilos específicos para a tela de Conferir Compra */
+.product-card.checkout .product-details {
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "delivery delivery"
+        "price weight";
+    grid-template-columns: 1fr auto;
+    gap: 5px;
+}
+
+.product-card.checkout .product-title {
+    grid-area: title;
+    font-size: 18px;
+    font-weight: 800;
+    color: #4A3B32;
+    margin-bottom: 0;
+}
+
+.delivery-time {
+    grid-area: delivery;
+    font-size: 13px;
+    color: #665C54;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.image-container {
+    position: relative;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.product-image.checkout {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.quantity-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #E8834F;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.action-row {
+    grid-area: price;
+    width: auto;
+    display: flex;
+    align-items: stretch;
+    height: 35px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.price-tag {
+    background-color: #A69C85;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.weight-info {
+    background-color: #968C76;
+    color: white;
+    padding: 5px 8px;
+    font-size: 11px;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    border-right: none;
+}
+
+.counter-checkout {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #4A3B32;
+}
+
+.counter-checkout i {
+    color: #A69C85;
+    font-size: 20px;
+}
+
+/* Seção de Endereço de Entrega */
+.delivery-address-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.address-icon {
+    color: #A69C85;
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.address-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.address-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #4A3B32;
+    margin-bottom: 5px;
+}
+
+.address-text {
+    font-size: 14px;
+    color: #665C54;
+    line-height: 1.4;
+}
+
+/* Botão Finalizar Compra */
+.btn-finalize-checkout {
+    width: 100%;
+    background-color: #E8834F;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 18px;
+    margin-top: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(232, 131, 79, 0.6);
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.btn-finalize-checkout:hover {
+    background-color: #C67040;
+}
+
+.total-credits {
+    color:white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* --- NAV BAR INFERIOR --- */
+nav.bottom-nav {
+    background-color: #E8834F;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    font-size: 11px;
+    gap: 4px;
+    padding: 5px;
+}
+
+.nav-item.active {
+    opacity: 1;
+    font-weight: 600;
+}
+
+.nav-item i {
+    font-size: 20px;
+}
