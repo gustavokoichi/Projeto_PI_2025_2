@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="description" content="Login - Semente da Gente">
-        <title>Login - Semente da Gente</title>
+        <title>Login - Semente da gente</title>
         <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/login.css">
     </head>
@@ -15,19 +15,66 @@
                   <img src="images/logo-sem-fundo-1-8.png" class="logo-sem-fundo-1-8" alt="logo-sem-fundo-1">
                 </div>
 
-                <input type="email" class="input-field" placeholder="Email">
-                <input type="password" class="input-field" placeholder="Senha">
+                <input type="username" id="username" class="input-field" placeholder="Usuário">
+                <input type="password" id="senha" class="input-field" placeholder="Senha">
 
-                <a href="intro.html" class="prototype-link">
-                    <button class="btn-entrar">Entrar</button>
-                </a>
+                <button class="btn-entrar" onclick="fazerLogin()">Entrar</button>
 
                 <a href="intro.html" class="prototype-link">
                     <p class="text-cadastro">
                         Não tem cadastro? Clique <strong>aqui</strong>
                     </p>
                 </a>
+
+                <p id="mensagem-erro" style="color: red; margin-top: 10px; display: none;"></p>
             </div>
         </div>
+
+        <script>
+            async function fazerLogin() {
+                const username = document.getElementById('username').value;
+                const senha = document.getElementById('senha').value;
+                const mensagemErro = document.getElementById('mensagem-erro');
+
+                if (!username || !senha) {
+                    mensagemErro.textContent = 'Preencha todos os campos';
+                    mensagemErro.style.display = 'block';
+                    return;
+                }
+
+                try {
+                    const response = await fetch('http://localhost:8080/api/auth/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            username: username,
+                            senha: senha
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.sucesso) {
+                        localStorage.setItem('usuarioLogado', username);
+                        window.location.href = 'intro.html';
+                    } else {
+                        mensagemErro.textContent = data.mensagem;
+                        mensagemErro.style.display = 'block';
+                    }
+                } catch (error) {
+                    mensagemErro.textContent = 'Erro ao conectar com o servidor';
+                    mensagemErro.style.display = 'block';
+                    console.error('Erro:', error);
+                }
+            }
+
+            document.getElementById('senha').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    fazerLogin();
+                }
+            });
+        </script>
     </body>
 </html>
