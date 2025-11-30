@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Sementes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/gerenciar-sementes.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="tela-principal-2.html" class="back-button">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <h1>Gerenciar Sementes</h1>
+    </header>
+
+    <main class="content">
+        <form id="sementeForm" class="semente-form">
+            <h2 id="formTitle">Nova Semente</h2>
+            
+            <div class="form-group">
+                <label for="nome" class="form-label">Nome Popular:</label>
+                <input type="text" id="nome" name="nome" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nomeCientifico" class="form-label">Nome Científico:</label>
+                <input type="text" id="nomeCientifico" name="nomeCientifico" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao" class="form-label">Descrição:</label>
+                <textarea id="descricao" name="descricao" class="form-textarea" placeholder="Digite a descrição da semente" required></textarea>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" class="submit-button" id="submitBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Adicionar Semente
+                </button>
+                <button type="button" class="cancel-button" id="cancelBtn" style="display: none;">
+                    <i class="fa-solid fa-times"></i>
+                    Cancelar
+                </button>
+            </div>
+        </form>
+
+        <div class="sementes-list">
+            <h2>Sementes Cadastradas</h2>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar sementes...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div id="sementesContainer" class="sementes-container">
+            </div>
+        </div>
+
+        <div id="deleteModal" class="modal">
+            <div class="modal-content">
+                <h3>Confirmar Exclusão</h3>
+                <p>Tem certeza que deseja excluir esta semente?</p>
+                <div class="modal-buttons">
+                    <button id="confirmDelete" class="delete-btn">Excluir</button>
+                    <button id="cancelDelete" class="cancel-btn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="notification" class="notification"></div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="tela-principal-2.html" class="nav-item">
+            <i class="fa-regular fa-id-card"></i>
+            Meus dados
+        </a>
+        <a href="lista-sementes.html" class="nav-item">
+            <i class="fa-solid fa-basket-shopping"></i>
+            Carrinho
+        </a>
+        <a href="sobre-o-projeto.html" class="nav-item">
+            <i class="fa-brands fa-envira"></i>
+            O projeto
+        </a>
+        <a href="fale-conosco.html" class="nav-item">
+            <i class="fa-regular fa-envelope"></i>
+            Contato
+        </a>
+    </nav>
+
+    <script src="js/gerenciar-sementes.js"></script>
+</body>
+</html>

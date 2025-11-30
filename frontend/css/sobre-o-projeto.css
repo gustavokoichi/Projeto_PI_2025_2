@@ -93,6 +93,38 @@ body {
     margin-bottom: 15px;
 }
 
+.manage-button {
+    width: 100%;
+    background-color: #E8834F;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(232, 131, 79, 0.6);
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.manage-button:hover {
+    background-color: #e9502a;
+    color: white;
+    text-decoration: none;
+}
+
+.manage-button i {
+    font-size: 20px;
+}
+
 .bottom-nav {
     background-color: #E07B4F;
     display: flex;
